@@ -194,18 +194,38 @@ int main ( void )
         fprintf(fp,"  (gr_text \" %u %3.1lf\" (at %10.3lf %10.3lf %5.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.1))) )\n",ra,xangle[ra],cx,cy,xangle[ra]);
     }
 
+    //place fab reference lines/numbers
+    for(ra=0;ra<120;ra+=10)
+    {
+        ax = xax[ra] * xlane[0];
+        ay = xay[ra] * xlane[0];
+        bx = xax[ra] * lane[8];
+        by = xay[ra] * lane[8];
+        ax +=150.0;
+        ay +=100.0;
+        bx +=150.0;
+        by +=100.0;
+        fprintf(fp,"  (gr_line (start %10.3lf %10.3lf) (end %10.3lf %10.3lf) (angle %5.1lf) (layer F.SilkS) (width 0.1))\n",ax,ay,bx,by,xangle[ra]);
+    }
+    //fprintf(fp,"  (gr_arc (start 150 100) (end %10.3lf %10.3lf) (angle %5.1lf) (layer F.SilkS) (width 0.1))\n",150.0+xlane[1],100.0,360.0);
+    //fprintf(fp,"  (gr_arc (start 150 100) (end %10.3lf %10.3lf) (angle %5.1lf) (layer F.SilkS) (width 0.1))\n",150.0+lane[9],100.0,360.0);
+
+
+
+
+
     //place leds
     rc=0; rd=1;
     for(ra=0;ra<120;ra+=2)
     {
         fprintf(fp,"  (module min:hand (layer F.Cu) (tedit 57FE93A5) (tstamp 5AA34834) \n");
         fprintf(fp,"    (at 150 100 %5.1lf)\n",xangle[ra]);
-        fprintf(fp,"    (fp_text reference %u (at %10.3lf 1 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",rc,16.0,xangle[ra]);
-        fprintf(fp,"    (fp_text value     %u (at %10.3lf 1 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",rd,17.6,xangle[ra]);
+        fprintf(fp,"    (fp_text reference \"\" (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",16.0,xangle[ra]);
+        fprintf(fp,"    (fp_text value     \"\" (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",17.6,xangle[ra]);
         fprintf(fp,"    (descr \"0603\")\n");
         fprintf(fp,"    (attr smd)\n");
-        fprintf(fp,"    (pad 1 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",16.0,xangle[ra]);
-        fprintf(fp,"    (pad 2 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",17.6,xangle[ra]);
+        fprintf(fp,"    (pad %u smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",rc,16.0,xangle[ra]);
+        fprintf(fp,"    (pad %u smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",rd,17.6,xangle[ra]);
         fprintf(fp,"  )\n");
 
         ax = xax[ra] * 17.6;
@@ -237,12 +257,12 @@ if(max[rd]<ra) max[rd]=ra;
 
             fprintf(fp,"  (module resi:stor (layer F.Cu) (tedit 57FE93A5) (tstamp 5AA34834) \n");
             fprintf(fp,"    (at 150 100 %5.1lf)\n",xangle[ra]);
-            fprintf(fp,"    (fp_text reference x (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]-1.6,xangle[ra]);
-            fprintf(fp,"    (fp_text value     x (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]+0.0,xangle[ra]);
+            fprintf(fp,"    (fp_text reference \"\" (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]-1.6,xangle[ra]);
+            fprintf(fp,"    (fp_text value     \"\" (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]+0.0,xangle[ra]);
             fprintf(fp,"    (descr \"0603\")\n");
             fprintf(fp,"    (attr smd)\n");
-            fprintf(fp,"    (pad 1 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]-1.6,xangle[ra]);
-            fprintf(fp,"    (pad 2 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]+0.0,xangle[ra]);
+            fprintf(fp,"    (pad \"\" smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]-1.6,xangle[ra]);
+            fprintf(fp,"    (pad \"\" smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]+0.0,xangle[ra]);
             fprintf(fp,"  )\n");
 
             ax = xax[ra] * (xlane[3]-1.6);
@@ -259,8 +279,8 @@ if(max[rd]<ra) max[rd]=ra;
             fprintf(fp,"    (at %10.3lf %10.3lf)\n",bx,by);
             fprintf(fp,"    (descr \"pinhole\")\n");
             fprintf(fp,"    (tags \"hole\")\n");
-            fprintf(fp,"    (fp_text reference x (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
-            fprintf(fp,"    (fp_text value     x (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
+            fprintf(fp,"    (fp_text reference \"\" (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
+            fprintf(fp,"    (fp_text value     \"\" (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
             fprintf(fp,"    (pad %u thru_hole rect (at 0 0 %3.1lf)    (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask))\n",rc,xangle[ra]);
             fprintf(fp,"  )\n");
         }
@@ -392,12 +412,12 @@ if(max[rc]<(ra+1)) max[rc]=ra+1;
 
     fprintf(fp,"  (module resi:stor (layer F.Cu) (tedit 57FE93A5) (tstamp 5AA34834) \n");
     fprintf(fp,"    (at 150 100 %5.1lf)\n",xangle[ra]);
-    fprintf(fp,"    (fp_text reference x (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]-1.6,xangle[ra]);
-    fprintf(fp,"    (fp_text value     x (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]+0.0,xangle[ra]);
+    fprintf(fp,"    (fp_text reference \"\" (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]-1.6,xangle[ra]);
+    fprintf(fp,"    (fp_text value     \"\" (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",xlane[3]+0.0,xangle[ra]);
     fprintf(fp,"    (descr \"0603\")\n");
     fprintf(fp,"    (attr smd)\n");
-    fprintf(fp,"    (pad 1 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]-1.6,xangle[ra]);
-    fprintf(fp,"    (pad 2 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]+0.0,xangle[ra]);
+    fprintf(fp,"    (pad \"\" smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]-1.6,xangle[ra]);
+    fprintf(fp,"    (pad \"\" smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",xlane[3]+0.0,xangle[ra]);
     fprintf(fp,"  )\n");
 
     ax = xax[ra] * (xlane[3]-1.6);
@@ -413,8 +433,8 @@ if(max[rc]<(ra+1)) max[rc]=ra+1;
     fprintf(fp,"    (at %10.3lf %10.3lf)\n",bx,by);
     fprintf(fp,"    (descr \"pinhole\")\n");
     fprintf(fp,"    (tags \"hole\")\n");
-    fprintf(fp,"    (fp_text reference x (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
-    fprintf(fp,"    (fp_text value     x (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
+    fprintf(fp,"    (fp_text reference \"\" (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
+    fprintf(fp,"    (fp_text value     \"\" (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
     fprintf(fp,"    (pad %u thru_hole rect (at 0 0 %3.1lf)    (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask))\n",8,xangle[ra]);
     fprintf(fp,"  )\n");
 
