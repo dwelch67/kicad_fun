@@ -64,7 +64,7 @@ int main ( void )
         bangle[ra]=rb;
     }
 
-    fp=fopen("clock1.kicad_pcb","wt");
+    fp=fopen("clock01.kicad_pcb","wt");
     if(fp==NULL) return(1);
 
     fprintf(fp,"(kicad_pcb (version 4) (host pcbnew 4.0.7-e2-6376~58~ubuntu16.04.1)\n");
@@ -292,7 +292,7 @@ int main ( void )
             case 6: rc=32; rd=67; break;
             case 7: rc= 3; rd=68; break;
         }
-        
+
         rangle=angle*degrad;
         ax = xax[rd] * lane[ra];
         ay = xay[rd] * lane[ra];

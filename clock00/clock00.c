@@ -64,7 +64,7 @@ int main ( void )
         bangle[ra]=rb;
     }
 
-    fp=fopen("clock0.kicad_pcb","wt");
+    fp=fopen("clock00.kicad_pcb","wt");
     if(fp==NULL) return(1);
 
     fprintf(fp,"(kicad_pcb (version 4) (host pcbnew 4.0.7-e2-6376~58~ubuntu16.04.1)\n");
