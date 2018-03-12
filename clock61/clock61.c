@@ -210,10 +210,6 @@ int main ( void )
     //fprintf(fp,"  (gr_arc (start 150 100) (end %10.3lf %10.3lf) (angle %5.1lf) (layer F.SilkS) (width 0.1))\n",150.0+xlane[1],100.0,360.0);
     //fprintf(fp,"  (gr_arc (start 150 100) (end %10.3lf %10.3lf) (angle %5.1lf) (layer F.SilkS) (width 0.1))\n",150.0+lane[9],100.0,360.0);
 
-
-
-
-
     //place leds
     rc=0; rd=1;
     for(ra=0;ra<120;ra+=2)
@@ -300,56 +296,6 @@ if(max[rd]<ra) max[rd]=ra;
 
 if(min[rc]>(ra+1)) min[rc]=ra+1;
 if(max[rc]<(ra+1)) max[rc]=ra+1;
-
-        //if(ra==0)
-        //{
-            //ax = xax[ra+1] * lane[9];
-            //ay = xay[ra+1] * lane[9];
-            //ax +=150.0;
-            //ay +=100.0;
-            //fprintf(fp,"  (segment (start %10.3lf %10.3lf) (end %10.3lf %10.3lf) (width 0.2) (layer F.Cu) (net 0))\n",ax,ay,bx,by);
-            //fprintf(fp,"  (via (at %10.3lf %10.3lf) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) (net 0))\n",ax,ay);
-            //fprintf(fp,"  (gr_arc (start 150 100) (end %10.3lf %10.3lf) (angle %10.3lf) (layer B.Cu) (width 0.2))\n",ax,ay,xangle[3]);
-            //ax = xax[118] * lane[9];
-            //ay = xay[118] * lane[9];
-            //bx = xax[118] * lane[10];
-            //by = xay[118] * lane[10];
-            //ax +=150.0;
-            //ay +=100.0;
-            //bx +=150.0;
-            //by +=100.0;
-            //fprintf(fp,"  (via (at %10.3lf %10.3lf) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) (net 0))\n",ax,ay);
-            //fprintf(fp,"  (segment (start %10.3lf %10.3lf) (end %10.3lf %10.3lf) (width 0.2) (layer F.Cu) (net 0))\n",ax,ay,bx,by);
-
-
-            //fprintf(fp,"  (module resi:stor (layer F.Cu) (tedit 57FE93A5) (tstamp 5AA34834) \n");
-            //fprintf(fp,"    (at 150 100 %5.1lf)\n",xangle[118]);
-            //fprintf(fp,"    (fp_text reference x (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",lane[10]+0.0,xangle[118]);
-            //fprintf(fp,"    (fp_text value     x (at %10.3lf 0 %3.1lf) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n",lane[10]+1.6,xangle[118]);
-            //fprintf(fp,"    (descr \"0603\")\n");
-            //fprintf(fp,"    (attr smd)\n");
-            //fprintf(fp,"    (pad 1 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",lane[10]+0.0,xangle[118]);
-            //fprintf(fp,"    (pad 2 smd rect (at %5.1lf 0 %5.1lf) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask))\n",lane[10]+1.6,xangle[118]);
-            //fprintf(fp,"  )\n");
-            //ax = xax[118] * (lane[10]+1.6);
-            //ay = xay[118] * (lane[10]+1.6);
-            //ax +=150.0;
-            //ay +=100.0;
-            //bx = xax[118] * (lane[10]+3.6);
-            //by = xay[118] * (lane[10]+3.6);
-            //bx +=150.0;
-            //by +=100.0;
-            //fprintf(fp,"  (segment (start %10.3lf %10.3lf) (end %10.3lf %10.3lf) (width 0.2) (layer F.Cu) (net 0))\n",ax,ay,bx,by);
-
-            //fprintf(fp,"  (module pin:hole (layer F.Cu) (tedit 59650532) (tstamp 5AA6FE27)\n");
-            //fprintf(fp,"    (at %10.3lf %10.3lf)\n",bx,by);
-            //fprintf(fp,"    (descr \"pinhole\")\n");
-            //fprintf(fp,"    (tags \"hole\")\n");
-            //fprintf(fp,"    (fp_text reference x (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
-            //fprintf(fp,"    (fp_text value     x (at 0 0) (layer F.Fab) (effects (font (size 0.1 0.1) (thickness 0.01))) )\n");
-            //fprintf(fp,"    (pad %u thru_hole rect (at 0 0 %3.1lf)    (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask))\n",0,xangle[118]);
-            //fprintf(fp,"  )\n");
-        //}
 
         rd++;
         if(rd==rc)
@@ -471,6 +417,32 @@ if(max[rc]<(ra+1)) max[rc]=ra+1;
     fprintf(fp,"  (gr_line (start %10.3lf %10.3lf ) (end  %10.3lf  %10.3lf ) (angle 90) (layer Edge.Cuts) (width 0.15))\n",bx,ay,bx,by);
     fprintf(fp,"  (gr_line (start %10.3lf %10.3lf ) (end  %10.3lf  %10.3lf ) (angle  0) (layer Edge.Cuts) (width 0.15))\n",ax,ay,bx,ay);
     fprintf(fp,"  (gr_line (start %10.3lf %10.3lf ) (end  %10.3lf  %10.3lf ) (angle  0) (layer Edge.Cuts) (width 0.15))\n",ax,by,bx,by);
+
+    for(ra=0;ra<4;ra++)
+    {
+        ax=150.0-lane[6];
+        bx=150.0+lane[6];
+        ay=100.0-lane[6];
+        by=100.0+lane[6];
+        switch(ra)
+        {
+            case 0: cx=ax; cy=ay; break;
+            case 1: cx=ax; cy=by; break;
+            case 2: cx=bx; cy=ay; break;
+            case 3: cx=bx; cy=by; break;
+        }
+
+        fprintf(fp,"  (module mounting:hole (layer F.Cu) (tedit 0) (tstamp 5AA570AE)\n");
+        fprintf(fp,"    (at %5.3lf %5.3lf)\n",cx,cy);
+        fprintf(fp,"    (descr hole)\n");
+        fprintf(fp,"    (tags hole)\n");
+        fprintf(fp,"    (fp_text reference x (at 0 0) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))\n");
+        fprintf(fp,"    (fp_text value     x (at 0 0) (layer F.Fab) (effects (font (size 1 1) (thickness 0.15))))\n");
+        //fprintf(fp,"    (fp_circle (center 0 0) (end 3 0) (layer F.Fab) (width 0.381))\n");
+        fprintf(fp,"    (pad 1 thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers *.Cu *.Mask F.SilkS))\n");
+        fprintf(fp,"  )\n");
+    }
+    fprintf(fp,"(gr_text clock61 (at 150  97) (layer B.Cu) (effects (font (size 1.5 1.5) (thickness 0.3))(justify mirror)) )\n");
 
     fprintf(fp,"\n");
     fprintf(fp,")\n");
