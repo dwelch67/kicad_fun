@@ -1,17 +1,22 @@
 (module UE27_BC54_130 (layer F.Cu)
   (descr "UE27-BC54-130")
   (tags "usb")
-  (fp_text reference "USB" (at 0 -1.0) (layer F.SilkS)
+  (fp_text reference "" (at 0 -1.0) (layer F.SilkS)
     (effects (font (size 0.5 0.5) (thickness 0.01)))
   )
   (fp_text value "" (at 0 1.0) (layer F.Fab)
     (effects (font (size 0.5 0.5) (thickness 0.01)))
   )
+
+  (fp_text user USB (at 0 0 0) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
   (fp_line (start -6.02 10.28) (end -6.02 -6.22) (layer F.CrtYd) (width 0.05))
   (fp_line (start  6.02 10.28) (end  6.02 -6.22) (layer F.CrtYd) (width 0.05))
   (fp_line (start -6.02 -6.22) (end  6.02 -6.22) (layer F.CrtYd) (width 0.05))
   (fp_line (start -6.02 10.28) (end  6.02 10.28) (layer F.CrtYd) (width 0.05))
-  
+
   (pad V thru_hole circle (at +1.25  -4.71) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask F.SilkS))
   (pad - thru_hole circle (at -1.25  -4.71) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask F.SilkS))
   (pad + thru_hole circle (at -1.25  -2.71) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask F.SilkS))

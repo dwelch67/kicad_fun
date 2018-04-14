@@ -1,0 +1,29 @@
+(module BUTTON4_SMT (layer F.Cu) (tedit 58723FBE)
+    (descr button4)
+    (tags "SPST button tactile switch")
+    (fp_text reference NAME (at 0 -3.81) (layer F.SilkS)
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value "" (at 0 3.81) (layer F.Fab)
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+
+    (fp_line (start -2.540  1.270) (end -2.540  0.508) (layer F.Fab) (width 0.2032))
+    (fp_line (start -2.540 -0.508) (end -2.540 -1.270) (layer F.Fab) (width 0.2032))
+    (fp_line (start -2.540  0.508) (end -2.159 -0.381) (layer F.Fab) (width 0.2032))
+
+    (fp_line (start  2.540  1.270) (end  2.540  0.508) (layer F.Fab) (width 0.2032))
+    (fp_line (start  2.540 -0.508) (end  2.540 -1.270) (layer F.Fab) (width 0.2032))
+    (fp_line (start  2.540  0.508) (end  2.159 -0.381) (layer F.Fab) (width 0.2032))
+
+    (fp_line (start -3.048 -3.048) (end -3.048  3.048) (layer F.Fab) (width 0.2032))
+    (fp_line (start  3.048 -3.048) (end  3.048  3.048) (layer F.Fab) (width 0.2032))
+    (fp_line (start -3.048 -3.048) (end  3.048 -3.048) (layer F.Fab) (width 0.2032))
+    (fp_line (start -3.048  3.048) (end  3.048  3.048) (layer F.Fab) (width 0.2032))
+
+    (pad 1 thru_hole circle (at -3.2512  2.2606) (size 1.8796 1.8796) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+    (pad 2 thru_hole circle (at  3.2512  2.2606) (size 1.8796 1.8796) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+    (pad 3 thru_hole circle (at -3.2512 -2.2606) (size 1.8796 1.8796) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+    (pad 4 thru_hole circle (at  3.2512 -2.2606) (size 1.8796 1.8796) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+
+)
