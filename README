@@ -1,0 +1,11 @@
+
+I dont in any way pretend to be an expert on kicad nor are these
+complete designs, they are a bit hacked together, should be more Rs
+and Cs on these boards at a minium.
+
+Enjoy making my own modules as well, takes less time than having to
+painfully edit the text, etc on the stock ones.
+
+Some of these items were software created, not created using pcbnew,
+checked with pcbnew then with oshpark's site which just uses gerbview
+(checked with that too).  Built clock61, works great
