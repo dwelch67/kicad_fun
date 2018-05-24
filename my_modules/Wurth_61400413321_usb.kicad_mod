@@ -1,0 +1,28 @@
+(module Wurth_61400413321 (layer F.Cu)
+  (descr "Wurth_61400413321")
+  (tags "usb")
+  (fp_text reference "" (at 0 -1.0) (layer F.SilkS)
+    (effects (font (size 0.5 0.5) (thickness 0.01)))
+  )
+  (fp_text value "" (at 0 1.0) (layer F.Fab)
+    (effects (font (size 0.5 0.5) (thickness 0.01)))
+  )
+
+  (fp_text user USB (at 0 -0.90 0) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_line (start -6.10  4.72) (end -6.10 -6.48) (layer F.CrtYd) (width 0.05))
+  (fp_line (start  6.10  4.72) (end  6.10 -6.48) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -6.10 -6.48) (end  6.10 -6.48) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -6.10  4.72) (end  6.10  4.72) (layer F.CrtYd) (width 0.05))
+
+  (pad V thru_hole circle (at +1.25  -2.70) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask F.SilkS))
+  (pad - thru_hole circle (at -1.25  -2.70) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask F.SilkS))
+  (pad + thru_hole circle (at -1.25   0.50) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask F.SilkS))
+  (pad G thru_hole circle (at +1.25   0.50) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask F.SilkS))
+
+  (pad X thru_hole circle (at +6.02   0.00) (size 3.5 3.5) (drill 2.3) (layers *.Cu *.Mask F.SilkS))
+  (pad X thru_hole circle (at -6.02   0.00) (size 3.5 3.5) (drill 2.3) (layers *.Cu *.Mask F.SilkS))
+
+)
