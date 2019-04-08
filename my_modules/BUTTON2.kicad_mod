@@ -1,0 +1,19 @@
+(module BUTTON2_ADAFRUIT (layer F.Cu) (tedit 58723FBE)
+    (descr button4)
+    (tags "SPST button tactile switch")
+    (fp_text reference NAME (at 0 -2.5) (layer F.SilkS)
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value "" (at 0 2.5) (layer F.Fab)
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+
+    (fp_line (start -3.0 -1.75) (end  3.0 -1.75) (layer F.Fab) (width 0.2032))
+    (fp_line (start -3.0  1.75) (end  3.0  1.75) (layer F.Fab) (width 0.2032))
+    (fp_line (start -3.0 -1.75) (end -3.0  1.75) (layer F.Fab) (width 0.2032))
+    (fp_line (start  3.0 -1.75) (end  3.0  1.75) (layer F.Fab) (width 0.2032))
+
+    (pad 1 thru_hole circle (at -3.2512  0) (size 1.8796 1.8796) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+    (pad 2 thru_hole circle (at  3.2512  0) (size 1.8796 1.8796) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+
+)
