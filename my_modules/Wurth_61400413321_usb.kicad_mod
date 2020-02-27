@@ -25,4 +25,9 @@
   (pad X thru_hole circle (at +6.02   0.00) (size 3.5 3.5) (drill 2.3) (layers *.Cu *.Mask F.SilkS))
   (pad X thru_hole circle (at -6.02   0.00) (size 3.5 3.5) (drill 2.3) (layers *.Cu *.Mask F.SilkS))
 
+  (fp_line (start -15 0 ) (end  15 0) (layer F.CrtYd) (width 0.01 ))
+  (fp_line (start 0 -15 ) (end  0 15) (layer F.CrtYd) (width 0.01 ))
+
+
+
 )

@@ -1,0 +1,34 @@
+(module TMP102 (layer F.Cu)
+  (descr "TMP102")
+  (tags "TMP102")
+  (fp_text reference TMP102 (at 6.00 0 90) (layer F.Fab)
+    (effects (font (size 0.8 0.8) (thickness 0.1)))
+  )
+  (fp_text value "" (at 0 -3.1) (layer F.Fab)
+    (effects (font (size 0.5 0.5) (thickness 0.01)))
+  )
+
+  (fp_line (start -1.75  -8.1) (end -1.75  8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start  1.75  -8.1) (end  1.75  8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -1.75  -8.1) (end  1.75 -8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -1.75   8.1) (end  1.75  8.1) (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start -6 -6.350) (end +6 -6.350) (layer F.CrtYd) (width 0.01))
+  (fp_line (start -6  -0.00) (end +6  +0.00) (layer F.CrtYd) (width 0.01))
+  (fp_line (start -6  6.350) (end +6  6.350) (layer F.CrtYd) (width 0.01))
+
+  (pad VCC thru_hole oval (at  0.127  -6.350) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad GND thru_hole oval (at -0.127  -3.810) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad SDA thru_hole oval (at  0.127  -1.270) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad SCL thru_hole oval (at -0.127  +1.270) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad ALT thru_hole oval (at  0.127  +3.810) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad ADD thru_hole oval (at -0.127  +6.350) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+
+  (fp_line (start  -2.00 -8.00) (end +14.00 -8.00) (layer F.CrtYd) (width 0.05))
+  (fp_line (start  -2.00 +8.00) (end +14.00 +8.00) (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start +14.00 -8.00) (end +14.00 +8.00) (layer F.CrtYd) (width 0.05))
+  (fp_line (start  -2.00 -8.00) (end  -2.00 +8.00) (layer F.CrtYd) (width 0.05))
+
+)
+

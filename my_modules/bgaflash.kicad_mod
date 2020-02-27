@@ -1,0 +1,49 @@
+(module bgaflash (layer F.Cu) (tedit 5ADF9FCE)
+  (descr "bgaflash")
+  (tags "BGA 24 1.0")
+  (attr smd)
+  (fp_text reference "" (at 0 0) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value "" (at 0 0) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_line (start -3 -4) (end -3 +4) (layer F.CrtYd) (width 0.1))
+  (fp_line (start +3 -4) (end +3 +4) (layer F.CrtYd) (width 0.1))
+
+
+  (fp_line (start -3 -4) (end +3 -4) (layer F.CrtYd) (width 0.1))
+  (fp_line (start -3 +4) (end +3 +4) (layer F.CrtYd) (width 0.1))
+
+  (pad A1 smd circle (at -1.5 -2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad A2 smd circle (at -0.5 -2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad A3 smd circle (at +0.5 -2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad A4 smd circle (at +1.5 -2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+
+  (pad B1 smd circle (at -1.5 -1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad CLK smd circle (at -0.5 -1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /sck) )
+  (pad VSS smd circle (at +0.5 -1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /vss) )
+  (pad VCC smd circle (at +1.5 -1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /vcc) )
+
+  (pad C1 smd circle (at -1.5 -0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad CS smd circle (at -0.5 -0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /cs ) )
+  (pad C3 smd circle (at +0.5 -0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad WP smd circle (at +1.5 -0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /wp) )
+
+  (pad D1 smd circle (at -1.5 +0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad SO smd circle (at -0.5 +0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /so) )
+  (pad SI smd circle (at +0.5 +0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /si) )
+  (pad HLD smd circle (at +1.5 +0.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste) (net 0 /hold ) )
+
+  (pad E1 smd circle (at -1.5 +1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad E2 smd circle (at -0.5 +1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad E3 smd circle (at +0.5 +1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad E4 smd circle (at +1.5 +1.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+
+  (pad F1 smd circle (at -1.5 +2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad F2 smd circle (at -0.5 +2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad F3 smd circle (at +0.5 +2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+  (pad F4 smd circle (at +1.5 +2.5) (size 0.4 0.4) (layers F.Cu F.Mask F.Paste))
+
+)
