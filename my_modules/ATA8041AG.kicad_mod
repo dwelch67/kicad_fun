@@ -19,10 +19,10 @@
 
   (pad  E thru_hole oval (at -6.350 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
   (pad  D thru_hole oval (at -3.810 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
-  (pad  3 thru_hole oval (at -1.270 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  P thru_hole oval (at -1.270 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
   (pad  C thru_hole oval (at +1.270 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
   (pad  G thru_hole oval (at +3.810 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
-  (pad  P thru_hole oval (at +6.350 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  3 thru_hole oval (at +6.350 11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
 
   (pad  0 thru_hole oval (at -6.350 -11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
   (pad  A thru_hole oval (at -3.810 -11.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
