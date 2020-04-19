@@ -1,0 +1,33 @@
+(module 7SEG (layer F.Cu) (tedit 5415CC62)
+  (descr "7SEG")
+  (tags "7SEG")
+  (fp_text reference 8546 (at 0 -6.00) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value "" (at 0 -4) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_line (start -9.25 -12.75)  (end -9.25  12.75) (layer F.CrtYd) (width 0.05))
+  (fp_line (start  9.25 -12.75)  (end  9.25  12.75) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -9.25 -12.75)  (end  9.25 -12.75) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -9.25  12.75)  (end  9.25  12.75) (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start -15 0 ) (end  15 0) (layer F.CrtYd) (width 0.01 ))
+  (fp_line (start 0 -15 ) (end  0 15) (layer F.CrtYd) (width 0.01 ))
+
+
+  (pad  G thru_hole oval (at -5.08 -10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  F thru_hole oval (at -2.54 -10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  V thru_hole oval (at  0.00 -10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  A thru_hole oval (at +2.54 -10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  B thru_hole oval (at +5.08 -10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+
+  (pad  E thru_hole oval (at -5.08  10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  D thru_hole oval (at -2.54  10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  V thru_hole oval (at  0.00  10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  C thru_hole oval (at +2.54  10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  P thru_hole oval (at +5.08  10.00) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+
+
+)

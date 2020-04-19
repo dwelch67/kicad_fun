@@ -1,0 +1,48 @@
+(module 7SEGX4 (layer F.Cu) (tedit 5415CC62)
+  (descr "7SEGX4")
+  (tags "7SEGX4")
+  (fp_text reference 8546 (at 0 -6.00) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value "" (at 0 -4) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+
+  (fp_line (start -43 -13)  (end -43  13) (layer F.CrtYd) (width 0.05))
+  (fp_line (start  43 -13)  (end  43  13) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -43 -13)  (end  43 -13) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -43  13)  (end  43  13) (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start -42.75  -8.1) (end -42.75  8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -39.25  -8.1) (end -39.25  8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -42.75  -8.1) (end -39.25 -8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start -42.75   8.1) (end -39.25  8.1) (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start -47 -6.350) (end -35 -6.350) (layer F.CrtYd) (width 0.01))
+  (fp_line (start -47  -0.00) (end -35  +0.00) (layer F.CrtYd) (width 0.01))
+  (fp_line (start -47  6.350) (end -35  6.350) (layer F.CrtYd) (width 0.01))
+
+  (pad  F thru_hole oval (at -40.873  -6.350) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  G thru_hole oval (at -41.127  -3.810) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad V0 thru_hole oval (at -40.873  -1.270) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad V1 thru_hole oval (at -41.127  +1.270) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  D thru_hole oval (at -40.873  +3.810) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  E thru_hole oval (at -41.127  +6.350) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+
+  (fp_line (start 39.25  -8.1) (end 39.25  8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start 42.75  -8.1) (end 42.75  8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start 39.25  -8.1) (end 42.75 -8.1) (layer F.CrtYd) (width 0.05))
+  (fp_line (start 39.25   8.1) (end 42.75  8.1) (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start 35 -6.350) (end 47 -6.350) (layer F.CrtYd) (width 0.01))
+  (fp_line (start 35  -0.00) (end 47  +0.00) (layer F.CrtYd) (width 0.01))
+  (fp_line (start 35  6.350) (end 47  6.350) (layer F.CrtYd) (width 0.01))
+
+  (pad  B thru_hole oval (at 41.127  -6.350) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  A thru_hole oval (at 40.873  -3.810) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad V2 thru_hole oval (at 41.127  -1.270) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad V3 thru_hole oval (at 40.873  +1.270) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  P thru_hole oval (at 41.127  +3.810) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+  (pad  C thru_hole oval (at 40.873  +6.350) (size 2.032 1.7272) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
+
+)
