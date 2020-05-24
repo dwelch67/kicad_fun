@@ -275,9 +275,9 @@ fprintf(fp,"  )\n");
     ax +=150.0;
     ay +=100.0;
 
-    fprintf(fp,"(gr_text G (at %10.5lf %10.5lf 270) (layer B.SilkS)(effects (font (size 1 1) (thickness 0.15))(justify mirror)))\n",ax-3.0,ay-2.54);
-    fprintf(fp,"(gr_text V (at %10.5lf %10.5lf 270) (layer B.SilkS)(effects (font (size 1 1) (thickness 0.15))(justify mirror)))\n",ax-3.0,ay+0.00);
-    fprintf(fp,"(gr_text I (at %10.5lf %10.5lf 270) (layer B.SilkS)(effects (font (size 1 1) (thickness 0.15))(justify mirror)))\n",ax-3.0,ay+2.54);
+    fprintf(fp,"(gr_text V (at %10.5lf %10.5lf 270) (layer B.SilkS)(effects (font (size 1 1) (thickness 0.15))(justify mirror)))\n",ax-3.0,ay-2.54);
+    fprintf(fp,"(gr_text I (at %10.5lf %10.5lf 270) (layer B.SilkS)(effects (font (size 1 1) (thickness 0.15))(justify mirror)))\n",ax-3.0,ay+0.00);
+    fprintf(fp,"(gr_text G (at %10.5lf %10.5lf 270) (layer B.SilkS)(effects (font (size 1 1) (thickness 0.15))(justify mirror)))\n",ax-3.0,ay+2.54);
 
     fprintf(fp,"  (module head:er (layer B.Cu) (tedit 0) (tstamp 5EAFD035)\n");
     fprintf(fp,"    (at %10.5lf %10.5lf)\n",ax,ay);
@@ -311,12 +311,12 @@ fprintf(fp,"  )\n");
         //fprintf(fp,"    (fp_text value     \"\" (at 0 0) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n");
         //fprintf(fp,"    (descr \"0603\")\n");
         //fprintf(fp,"    (attr smd)\n");
-        fprintf(fp,"    (pad G smd rect (at -0.8 0 %10.5lf) (size 0.8 0.8) (layers B.Cu B.Paste B.Mask))\n",xangle[ra]);
-        fprintf(fp,"    (pad V smd rect (at +0.8 0 %10.5lf) (size 0.8 0.8) (layers B.Cu B.Paste B.Mask))\n",xangle[ra]);
+        fprintf(fp,"    (pad V smd rect (at -0.8 0 %10.5lf) (size 0.8 0.8) (layers B.Cu B.Paste B.Mask))\n",xangle[ra]);
+        fprintf(fp,"    (pad G smd rect (at +0.8 0 %10.5lf) (size 0.8 0.8) (layers B.Cu B.Paste B.Mask))\n",xangle[ra]);
         fprintf(fp,"  )\n");
 
         fprintf(fp,"(module 00_my_modules:X (layer F.Cu) (tedit 5415CC62) (tstamp 5EA86CD9)\n");
-        fprintf(fp,"    (at  %10.5lf %10.5lf %10.5lf)\n",150+xax[ra]*RING_BASE,100+xay[ra]*RING_BASE,xangle[ra]);
+        fprintf(fp,"    (at  %10.5lf %10.5lf %10.5lf)\n",150+xax[ra]*RING_BASE,100+xay[ra]*RING_BASE,xangle[ra]+180);
         //fprintf(fp,"    (descr WS2812B)\n");
         //fprintf(fp,"    (attr smd)\n");
         //fprintf(fp,"    (fp_text reference \"\" (at 0 0) (layer F.Fab)(effects (font (size 0.5 0.5) (thickness 0.05))))\n");
@@ -326,7 +326,7 @@ fprintf(fp,"  )\n");
         fprintf(fp,"    (fp_line (start 2.5 2.5) (end 2.5 -2.5) (layer B.CrtYd) (width 0.01))\n");
         fprintf(fp,"    (fp_line (start -2.5 2.5) (end -2.5 -2.5) (layer B.CrtYd) (width 0.01))\n");
         fprintf(fp,"    (fp_line (start -1.5 -2.5) (end -2.5 -1.5) (layer B.CrtYd) (width 0.01))\n");
-        fprintf(fp,"    (fp_line (start -2.65 0.5) (end -2.65 -0.5) (layer F.SilkS) (width 0.1))\n");
+        fprintf(fp,"    (fp_line (start 2.65 0.5) (end 2.65 -0.5) (layer F.SilkS) (width 0.1))\n");
 
         //fprintf(fp,"    (fp_line (start -3.8 -1.65) (end -1.6 -1.65) (layer B.CrtYd) (width 0.01))\n");
         //fprintf(fp,"    (fp_line (start -2.7 -2.65) (end -2.7 -0.65) (layer B.CrtYd) (width 0.01))\n");
@@ -353,24 +353,15 @@ fprintf(fp,"  )\n");
             fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
             if(ra==0)
             {
-                //bx = xgndx[ra] * (RING_BASE-RING_TOP);
-                //by = xgndy[ra] * (RING_BASE-RING_TOP);
-                //bx +=150.0;
-                //by +=100.0;
-                //fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
-                //fprintf(fp,"  (via (at %10.5lf %10.5lf) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) )\n",bx,by);
-                //ax = xgndx[ra] * (RING_BASE-RING_TOP-5);
-                //ay = xgndy[ra] * (RING_BASE-RING_TOP-5);
-                //ax +=150.0;
-                //ay +=100.0;
-                //fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer B.Cu) )\n",ax,ay,bx,by);
-
-                bx = xgndx[ra] * (RING_BASE-RING_TOP-1.5);
-                by = xgndy[ra] * (RING_BASE-RING_TOP-1.5);
+                ax = xax[ra+1] * (RING_BASE-RING_OFF);
+                ay = xay[ra+1] * (RING_BASE-RING_OFF);
+                ax +=150.0;
+                ay +=100.0;
+                bx = xax[ra+1] * (RING_BASE-RING_TOP-1.5);
+                by = xay[ra+1] * (RING_BASE-RING_TOP-1.5);
                 bx +=150.0;
                 by +=100.0;
                 fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
-                fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",bx,by,bx,by-1.27);
             }
         }
 
@@ -385,28 +376,34 @@ fprintf(fp,"  )\n");
             bx +=150.0;
             by +=100.0;
             fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
-            if(ra==0)
+            if(ra==(DIVISIONS-2))
             {
-                //ax = xax[ra] * (RING_BASE+RING_OFF);
-                //ay = xay[ra] * (RING_BASE+RING_OFF);
-                //bx = xax[ra] * (RING_BASE-RING_TOP);
-                //by = xay[ra] * (RING_BASE-RING_TOP);
-                //ax +=150.0;
-                //ay +=100.0;
-                //bx +=150.0;
-                //by +=100.0;
-                //fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
-                //fprintf(fp,"  (via (at %10.5lf %10.5lf) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) )\n",bx,by);
-                //ax = xax[ra] * (RING_BASE-RING_TOP-5);
-                //ay = xay[ra] * (RING_BASE-RING_TOP-5);
-                //ax +=150.0;
-                //ay +=100.0;
-                //fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer B.Cu) )\n",ax,ay,bx,by);
+                ax = xax[ra+1] * (RING_BASE-1);
+                ay = xay[ra+1] * (RING_BASE-1);
+                bx = xax[ra+1] * (RING_BASE-RING_TOP-1.5);
+                by = xay[ra+1] * (RING_BASE-RING_TOP-1.5);
+                ax +=150.0;
+                ay +=100.0;
+                bx +=150.0;
+                by +=100.0;
+                fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
+                fprintf(fp,"  (via (at %10.5lf %10.5lf) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) )\n",ax,ay);
 
-                ax = xax[ra] * (RING_BASE+RING_OFF);
-                ay = xay[ra] * (RING_BASE+RING_OFF);
-                bx = xax[ra] * (RING_BASE-RING_TOP-1.5);
-                by = xay[ra] * (RING_BASE-RING_TOP-1.5);
+                ax = xax[ra+1] * (RING_BASE+1);
+                ay = xay[ra+1] * (RING_BASE+1);
+                bx = xax[ra+1] * (RING_BASE-1);
+                by = xay[ra+1] * (RING_BASE-1);
+                ax +=150.0;
+                ay +=100.0;
+                bx +=150.0;
+                by +=100.0;
+                fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer B.Cu) )\n",ax,ay,bx,by);
+                fprintf(fp,"  (via (at %10.5lf %10.5lf) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) )\n",ax,ay);
+
+                ax = xax[ra+1] * (RING_BASE+RING_OFF);
+                ay = xay[ra+1] * (RING_BASE+RING_OFF);
+                bx = xax[ra+1] * (RING_BASE+1);
+                by = xay[ra+1] * (RING_BASE+1);
                 ax +=150.0;
                 ay +=100.0;
                 bx +=150.0;
@@ -418,39 +415,45 @@ fprintf(fp,"  )\n");
 
         //hook up out to in
         {
-            ax = xinx[ra] * (RING_BASE-XPAD);
-            ay = xiny[ra] * (RING_BASE-XPAD);
-            ax +=150.0;
-            ay +=100.0;
-            bx = xax[ra] * (RING_BASE);
-            by = xay[ra] * (RING_BASE);
-            bx -= xax[ninety_degrees(ra)] * YPAD;
-            by -= xay[ninety_degrees(ra)] * YPAD;
-            bx +=150.0;
-            by +=100.0;
             if(ra==0)
             {
-                //bx = xinx[ra] * (RING_BASE-RING_TOP);
-                //by = xiny[ra] * (RING_BASE-RING_TOP);
-                //bx +=150.0;
-                //by +=100.0;
-                //fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
-                //fprintf(fp,"  (via (at %10.5lf %10.5lf) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) )\n",bx,by);
-                //ax = xinx[ra] * (RING_BASE-RING_TOP-5);
-                //ay = xiny[ra] * (RING_BASE-RING_TOP-5);
-                //ax +=150.0;
-                //ay +=100.0;
-                //fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer B.Cu) )\n",ax,ay,bx,by);
+                ax = xax[ra] * (RING_BASE+XPAD);
+                ay = xay[ra] * (RING_BASE+XPAD);
+                ax +=150.0;
+                ay +=100.0;
 
-                bx = xinx[ra] * (RING_BASE-RING_TOP-1.5);
-                by = xiny[ra] * (RING_BASE-RING_TOP-1.5);
+                bx = xax[ra] * (RING_BASE-RING_TOP-1.5);
+                by = xay[ra] * (RING_BASE-RING_TOP-1.5);
+                bx +=150.0;
+                by +=100.0;
+
+                fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
+
+                ax = xax[ra] * (RING_BASE+XPAD);
+                ay = xay[ra] * (RING_BASE+XPAD);
+                ax +=150.0;
+                ay +=100.0;
+
+                bx = xax[ra] * (RING_BASE+XPAD);
+                by = xay[ra] * (RING_BASE+XPAD);
+                bx += xax[ninety_degrees(ra)] * YPAD;
+                by += xay[ninety_degrees(ra)] * YPAD;
                 bx +=150.0;
                 by +=100.0;
                 fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
-                fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",bx,by,bx,by+1.27);
             }
-            else
+            if(ra!=2)
             {
+                ax = xinx[ra] * (RING_BASE-XPAD);
+                ay = xiny[ra] * (RING_BASE-XPAD);
+                ax +=150.0;
+                ay +=100.0;
+                bx = xax[ra] * (RING_BASE);
+                by = xay[ra] * (RING_BASE);
+                bx -= xax[ninety_degrees(ra)] * YPAD;
+                by -= xay[ninety_degrees(ra)] * YPAD;
+                bx +=150.0;
+                by +=100.0;
                 fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
                 fprintf(fp,"  (gr_arc (start 150 100) (end %10.5lf %10.5lf) (angle %10.5lf) (layer F.Cu) (width 0.2) )\n",bx,by,zangle);
             }
@@ -466,7 +469,10 @@ fprintf(fp,"  )\n");
             by += xay[ninety_degrees(ra)] * YPAD;
             bx +=150.0;
             by +=100.0;
-            if(ra!=(DIVISIONS-2))
+            if(ra==0)
+            {
+            }
+            else
             {
                 fprintf(fp,"  (segment (start %10.5lf %10.5lf) (end %10.5lf %10.5lf) (width 0.2) (layer F.Cu) )\n",ax,ay,bx,by);
             }
@@ -523,12 +529,11 @@ fprintf(fp,"  )\n");
     ay += 100.0;
     fprintf(fp,"  (gr_arc (start 150 100) (end %10.5lf %10.5lf) (angle %10.5lf) (layer F.Cu) (width 0.2))\n",ax,ay,xangle[DIVISIONS-2]);
 
-    ax = xvccx[DIVISIONS-2] * (RING_BASE+RING_OFF);
-    ay = xvccy[DIVISIONS-2] * (RING_BASE+RING_OFF);
+    ax = xvccx[0] * (RING_BASE+RING_OFF);
+    ay = xvccy[0] * (RING_BASE+RING_OFF);
     ax += 150.0;
     ay += 100.0;
     fprintf(fp,"  (gr_arc (start 150 100) (end %10.5lf %10.5lf) (angle %10.5lf) (layer F.Cu) (width 0.2))\n",ax,ay,xangle[DIVISIONS-2]);
-
 
 
     ax = xax[0] * (RING_BASE);
