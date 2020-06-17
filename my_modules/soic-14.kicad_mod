@@ -1,0 +1,45 @@
+(module soic14 (layer F.Cu) (tedit 54130A77)
+  (descr "soic14")
+  (tags "soic14")
+  (attr smd)
+  (fp_text reference soic14 (at 0 0 90) (layer F.Fab)
+    (effects (font (size 0.8 0.8) (thickness 0.1)))
+  )
+  (fp_text value "" (at -1.50 -3.0) (layer F.Fab)
+    (effects (font (size 0.5 0.5) (thickness 0.01)))
+  )
+
+
+  (fp_line (start -2.0 -4.5) (end -1.5 -4.5) (layer F.SilkS) (width 0.10))
+
+
+  (fp_line (start -1.95 -4.325)  (end -1.95  4.325)  (layer F.CrtYd) (width 0.05))
+  (fp_line (start  1.95 -4.325)  (end  1.95  4.325)  (layer F.CrtYd) (width 0.05))
+  (fp_line (start -1.95 -4.325)  (end  1.95 -4.325)  (layer F.CrtYd) (width 0.05))
+  (fp_line (start -1.95  4.325)  (end  1.95  4.325)  (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start -3.00 -4.325)  (end -3.00  4.325)  (layer F.CrtYd) (width 0.05))
+  (fp_line (start  3.00 -4.325)  (end  3.00  4.325)  (layer F.CrtYd) (width 0.05))
+  (fp_line (start -3.00 -4.325)  (end  3.00 -4.325)  (layer F.CrtYd) (width 0.05))
+  (fp_line (start -3.00  4.325)  (end  3.00  4.325)  (layer F.CrtYd) (width 0.05))
+
+  (fp_line (start -6 -0) (end +6 +0) (layer F.CrtYd) (width 0.01))
+  (fp_line (start -0 -6) (end +0 +6) (layer F.CrtYd) (width 0.01))
+
+  (pad  1 smd rect  (at -2.9 -3.81) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  2 smd rect  (at -2.9 -2.54) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  3 smd rect  (at -2.9 -1.27) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  4 smd rect  (at -2.9  0.00) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  5 smd rect  (at -2.9  1.27) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  6 smd rect  (at -2.9  2.54) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  7 smd rect  (at -2.9  3.81) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+
+  (pad 14 smd rect  (at  2.9 -3.81) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad 13 smd rect  (at  2.9 -2.54) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad 12 smd rect  (at  2.9 -1.27) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad 11 smd rect  (at  2.9  0.00) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad 10 smd rect  (at  2.9  1.27) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  9 smd rect  (at  2.9  2.54) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+  (pad  8 smd rect  (at  2.9  3.81) (size 1.60 0.60) (layers F.Cu F.Paste F.Mask))
+
+)
