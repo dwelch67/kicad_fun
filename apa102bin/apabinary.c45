@@ -1,0 +1,250 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+static FILE *fp;
+
+
+#define ROWS 3
+#define COLS 4
+#define SPACING 7.5
+
+
+int main ( void )
+{
+    unsigned int ra;
+    unsigned int rx,ry;
+    double dx,dy;
+    double degrad;
+    double angle;
+    //double rangle;
+
+    degrad = M_PI / 180.0;
+
+    angle=45.0;
+    //rangle=angle*degrad;
+    //x = cos(rangle);
+    //y = -sin(rangle);
+    //xangle[ra]=angle;
+    //xax[ra]=x;
+    //xay[ra]=y;
+
+
+    fp=fopen("apabinary.kicad_pcb","wt");
+    if(fp==NULL) return(1);
+
+    fprintf(fp,"(kicad_pcb (version 4) (host pcbnew 4.0.7-e2-6376~58~ubuntu16.04.1)\n");
+    fprintf(fp,"\n");
+    fprintf(fp,"  (general\n");
+    fprintf(fp,"    (links 0)\n");
+    fprintf(fp,"    (no_connects 0)\n");
+    fprintf(fp,"    (area 150 100 180 100)\n");
+    fprintf(fp,"    (thickness 1.6)\n");
+    fprintf(fp,"    (drawings 2)\n");
+    fprintf(fp,"    (tracks 0)\n");
+    fprintf(fp,"    (zones 0)\n");
+    fprintf(fp,"    (modules 0)\n");
+    fprintf(fp,"    (nets 1)\n");
+    fprintf(fp,"  )\n");
+    fprintf(fp,"\n");
+    fprintf(fp,"  (page A4)\n");
+    fprintf(fp,"  (layers\n");
+    fprintf(fp,"    (0 F.Cu signal)\n");
+    fprintf(fp,"    (31 B.Cu signal)\n");
+    fprintf(fp,"    (32 B.Adhes user)\n");
+    fprintf(fp,"    (33 F.Adhes user)\n");
+    fprintf(fp,"    (34 B.Paste user)\n");
+    fprintf(fp,"    (35 F.Paste user)\n");
+    fprintf(fp,"    (36 B.SilkS user)\n");
+    fprintf(fp,"    (37 F.SilkS user)\n");
+    fprintf(fp,"    (38 B.Mask user)\n");
+    fprintf(fp,"    (39 F.Mask user)\n");
+    fprintf(fp,"    (40 Dwgs.User user)\n");
+    fprintf(fp,"    (41 Cmts.User user)\n");
+    fprintf(fp,"    (42 Eco1.User user)\n");
+    fprintf(fp,"    (43 Eco2.User user)\n");
+    fprintf(fp,"    (44 Edge.Cuts user)\n");
+    fprintf(fp,"    (45 Margin user)\n");
+    fprintf(fp,"    (46 B.CrtYd user)\n");
+    fprintf(fp,"    (47 F.CrtYd user)\n");
+    fprintf(fp,"    (48 B.Fab user)\n");
+    fprintf(fp,"    (49 F.Fab user)\n");
+    fprintf(fp,"  )\n");
+    fprintf(fp,"\n");
+    fprintf(fp,"  (setup\n");
+    fprintf(fp,"    (last_trace_width 0.25)\n");
+    fprintf(fp,"    (trace_clearance 0.2)\n");
+    fprintf(fp,"    (zone_clearance 0.508)\n");
+    fprintf(fp,"    (zone_45_only no)\n");
+    fprintf(fp,"    (trace_min 0.2)\n");
+    fprintf(fp,"    (segment_width 0.2)\n");
+    fprintf(fp,"    (edge_width 0.15)\n");
+    fprintf(fp,"    (via_size 0.6)\n");
+    fprintf(fp,"    (via_drill 0.4)\n");
+    fprintf(fp,"    (via_min_size 0.4)\n");
+    fprintf(fp,"    (via_min_drill 0.3)\n");
+    fprintf(fp,"    (uvia_size 0.3)\n");
+    fprintf(fp,"    (uvia_drill 0.1)\n");
+    fprintf(fp,"    (uvias_allowed no)\n");
+    fprintf(fp,"    (uvia_min_size 0.2)\n");
+    fprintf(fp,"    (uvia_min_drill 0.1)\n");
+    fprintf(fp,"    (pcb_text_width 0.3)\n");
+    fprintf(fp,"    (pcb_text_size 1.5 1.5)\n");
+    fprintf(fp,"    (mod_edge_width 0.15)\n");
+    fprintf(fp,"    (mod_text_size 1 1)\n");
+    fprintf(fp,"    (mod_text_width 0.15)\n");
+    fprintf(fp,"    (pad_size 1.524 1.524)\n");
+    fprintf(fp,"    (pad_drill 0.762)\n");
+    fprintf(fp,"    (pad_to_mask_clearance 0.2)\n");
+    fprintf(fp,"    (aux_axis_origin 0 0)\n");
+    fprintf(fp,"    (visible_elements FFFFFF7F)\n");
+    fprintf(fp,"    (pcbplotparams\n");
+    fprintf(fp,"      (layerselection 0x00030_80000001)\n");
+    fprintf(fp,"      (usegerberextensions false)\n");
+    fprintf(fp,"      (excludeedgelayer true)\n");
+    fprintf(fp,"      (linewidth 0.150000)\n");
+    fprintf(fp,"      (plotframeref false)\n");
+    fprintf(fp,"      (viasonmask false)\n");
+    fprintf(fp,"      (mode 1)\n");
+    fprintf(fp,"      (useauxorigin false)\n");
+    fprintf(fp,"      (hpglpennumber 1)\n");
+    fprintf(fp,"      (hpglpenspeed 20)\n");
+    fprintf(fp,"      (hpglpendiameter 15)\n");
+    fprintf(fp,"      (hpglpenoverlay 2)\n");
+    fprintf(fp,"      (psnegative false)\n");
+    fprintf(fp,"      (psa4output false)\n");
+    fprintf(fp,"      (plotreference true)\n");
+    fprintf(fp,"      (plotvalue true)\n");
+    fprintf(fp,"      (plotinvisibletext false)\n");
+    fprintf(fp,"      (padsonsilk false)\n");
+    fprintf(fp,"      (subtractmaskfromsilk false)\n");
+    fprintf(fp,"      (outputformat 1)\n");
+    fprintf(fp,"      (mirror false)\n");
+    fprintf(fp,"      (drillshape 1)\n");
+    fprintf(fp,"      (scaleselection 1)\n");
+    fprintf(fp,"      (outputdirectory \"\"))\n");
+    fprintf(fp,"  )\n");
+    fprintf(fp,"\n");
+    fprintf(fp,"  (net 0 \"\")\n");
+    fprintf(fp,"\n");
+    fprintf(fp,"  (net_class Default \"This is the default net class.\"\n");
+    fprintf(fp,"    (clearance 0.2)\n");
+    fprintf(fp,"    (trace_width 0.25)\n");
+    fprintf(fp,"    (via_dia 0.6)\n");
+    fprintf(fp,"    (via_drill 0.4)\n");
+    fprintf(fp,"    (uvia_dia 0.3)\n");
+    fprintf(fp,"    (uvia_drill 0.1)\n");
+    fprintf(fp,"  )\n");
+    fprintf(fp,"\n");
+
+//fprintf(fp,"  (gr_text APABIN (at 145 100 270) (layer B.SilkS)\n");
+//fprintf(fp,"    (effects (font (size 1.5 1.5) (thickness 0.3))(justify mirror) )\n");
+//fprintf(fp,"  )\n");
+
+    dy=100.0;
+    for(ry=0;ry<ROWS;ry++,dy+=SPACING)
+    {
+        dx=100.0;
+        for(rx=0;rx<COLS;rx++,dx+=SPACING)
+        {
+//printf("%u %u %lf %lf \n",rx,ry,dy,dx);
+            fprintf(fp,"(module 00_my_modules:X (layer F.Cu) (tedit 5415CC62) (tstamp 5EA86CD9)\n");
+            fprintf(fp,"    (at  %10.5lf %10.5lf %10.5lf)\n",dx,dy,angle);
+            //fprintf(fp,"(fp_circle (center 2.413 3.048) (end 2.4765 3.1115) (layer F.SilkS) (width 0.15))\n");
+            fprintf(fp,"(fp_circle (center 0 0) (end 0 2.0) (layer F.CrtYd) (width 0.01))\n");
+            fprintf(fp,"(fp_line (start  2.5   2.5) (end -2.5   2.5) (layer F.CrtYd) (width 0.01))\n");
+            fprintf(fp,"(fp_line (start  2.5  -2.5) (end -2.5  -2.5) (layer F.CrtYd) (width 0.01))\n");
+            fprintf(fp,"(fp_line (start  2.5   2.5) (end  2.5  -2.5) (layer F.CrtYd) (width 0.01))\n");
+            fprintf(fp,"(fp_line (start -2.5   2.5) (end -2.5  -2.5) (layer F.CrtYd) (width 0.01))\n");
+            fprintf(fp,"(fp_line (start -1.5  -2.5) (end -2.5  -1.5) (layer F.CrtYd) (width 0.01))\n");
+            fprintf(fp,"(fp_line (start -2.65 -0.5) (end -2.65  0.5) (layer F.SilkS) (width 0.1))\n");
+            fprintf(fp,"(pad DI  smd rect (at  -2.6 -1.7 %10.5lf) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask))\n",angle);
+            fprintf(fp,"(pad CI  smd rect (at  -2.6 -0.0 %10.5lf) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask))\n",angle);
+            fprintf(fp,"(pad GND smd rect (at  -2.6  1.7 %10.5lf) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask))\n",angle);
+            fprintf(fp,"(pad VCC smd rect (at   2.6  1.7 %10.5lf) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask))\n",angle);
+            fprintf(fp,"(pad CO  smd rect (at   2.6 -0.0 %10.5lf) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask))\n",angle);
+            fprintf(fp,"(pad DO  smd rect (at   2.6 -1.7 %10.5lf) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask))\n",angle);
+            fprintf(fp,"  )\n");
+        }
+    }
+
+
+
+    //for(ra=0;ra<DIVISIONS;ra+=2)
+    //{
+        //fprintf(fp,"(module 00_my_modules:X (layer F.Cu) (tedit 5415CC62) (tstamp 5EA86CD9)\n");
+        //fprintf(fp,"    (at  %10.5lf %10.5lf %10.5lf)\n",150.0+xax[ra]*RING_BASE,100+xay[ra]*RING_BASE,xangle[ra]+45);
+        //fprintf(fp,"(fp_line (start -2.5 -2.5) (end -2.5  2.5) (layer F.CrtYd) (width 0.01))\n");
+        //fprintf(fp,"(fp_line (start  2.5 -2.5) (end  2.5  2.5) (layer F.CrtYd) (width 0.01))\n");
+        //fprintf(fp,"(fp_line (start -2.5 -2.5) (end  2.5 -2.5) (layer F.CrtYd) (width 0.01))\n");
+        //fprintf(fp,"(fp_line (start -2.5  2.5) (end  2.5  2.5) (layer F.CrtYd) (width 0.01))\n");
+        //fprintf(fp,"(fp_line (start -2.5 -1.5) (end -1.5 -2.5) (layer F.CrtYd) (width 0.01))\n");
+        //fprintf(fp,"(fp_line (start -2.5 2.5) (end -2.7 2.5) (layer F.SilkS) (width 0.1))\n");
+        //fprintf(fp,"(fp_line (start  2.5 2.5) (end  2.7 2.5) (layer F.SilkS) (width 0.1))\n");
+
+
+        //fprintf(fp,"(pad VCC smd rect (at  1.7  2.6 %10.5lf) (size 1.1 2.2) (layers F.Cu F.Paste F.Mask)        )\n",xangle[ra]+45);
+        //fprintf(fp,"(pad CO  smd rect (at  0    2.6 %10.5lf) (size 1.1 2.2) (layers F.Cu F.Paste F.Mask)        )\n",xangle[ra]+45);
+        //fprintf(fp,"(pad DO  smd rect (at -1.7  2.6 %10.5lf) (size 1.1 2.2) (layers F.Cu F.Paste F.Mask)        )\n",xangle[ra]+45);
+
+        //fprintf(fp,"(pad DI  smd rect (at -1.7 -2.6 %10.5lf) (size 1.1 2.2) (layers F.Cu F.Paste F.Mask)        )\n",xangle[ra]+45);
+        //fprintf(fp,"(pad CI  smd rect (at  0   -2.6 %10.5lf) (size 1.1 2.2) (layers F.Cu F.Paste F.Mask)        )\n",xangle[ra]+45);
+        //fprintf(fp,"(pad GND smd rect (at  1.7 -2.6 %10.5lf) (size 1.1 2.2) (layers F.Cu F.Paste F.Mask)        )\n",xangle[ra]+45);
+//if(ra)
+//{
+        ////DI
+        //fprintf(fp,"(fp_line (start -1.7  -2.6) (end -1.7  -4.5) (layer F.Cu) (width 0.2))\n");
+        //fprintf(fp,"(fp_line (start  0.85 -4.5) (end -1.7  -4.5) (layer F.Cu) (width 0.2))\n");
+        //fprintf(fp,"(fp_line (start  0.85 -4.5) (end  0.85 -0.7) (layer F.Cu) (width 0.2))\n");
+        //fprintf(fp,"(fp_line (start  2.5  -0.7) (end  0.85 -0.7) (layer F.Cu) (width 0.2))\n");
+        //fprintf(fp,"(fp_line (start  2.5  -0.7) (end  4.2  -2.4) (layer F.Cu) (width 0.2))\n");
+
+        ////CI
+        //fprintf(fp,"(fp_line (start  0   -2.6) (end  0   0.5) (layer F.Cu) (width 0.2))\n");
+        //fprintf(fp,"(fp_line (start  2.5  0.5) (end  0   0.5) (layer F.Cu) (width 0.2))\n");
+        //fprintf(fp,"(fp_line (start  2.5  0.5) (end  6   -3.0) (layer F.Cu) (width 0.2))\n");
+//}
+//else
+//{
+        ////CI
+        //fprintf(fp,"(fp_line (start  0    -2.6) (end  0 -4.5) (layer F.Cu) (width 0.2))\n");
+        //fprintf(fp,"(fp_line (start  -2.6 -4.5) (end  0 -4.5) (layer F.Cu) (width 0.2))\n");
+
+        ////DI
+        //fprintf(fp,"(fp_line (start -1.7  -2.6) (end -3.6 -3.4) (layer F.Cu) (width 0.2))\n");
+        ////vcc
+        //fprintf(fp,"(fp_line (start  1.7  2.6) (end  1.7 -0.7) (layer F.Cu) (width 0.25))\n");
+        //fprintf(fp,"(fp_line (start -2.5 -0.7) (end  1.7 -0.7) (layer F.Cu) (width 0.25))\n");
+        //fprintf(fp,"(fp_line (start -2.5 -0.7) (end -4.5 -2.7) (layer F.Cu) (width 0.25))\n");
+
+//}
+
+        ////gnd
+        //fprintf(fp,"(fp_line (start  1.7  -2.6) (end 1.7  -5.5) (layer F.Cu) (width 0.25))\n");
+        //fprintf(fp,"(fp_line (start -1.8  -5.5) (end 1.7  -5.5) (layer F.Cu) (width 0.25))\n");
+        ////vcc
+        //fprintf(fp,"(fp_line (start 1.7  2.6) (end 1.7  5.25) (layer F.Cu) (width 0.25))\n");
+
+        //fprintf(fp,"  )\n");
+
+    //}
+
+
+
+
+    //ax=150.0-(RING_BASE+7);
+    //bx=150.0+(RING_BASE+7);
+    //ay=100.0-(RING_BASE+7);
+    //by=100.0+(RING_BASE+7);
+    //fprintf(fp,"  (gr_line (start %10.5lf %10.5lf ) (end  %10.5lf  %10.5lf ) (angle 90) (layer Edge.Cuts) (width 0.15))\n",ax,ay,ax,by);
+    //fprintf(fp,"  (gr_line (start %10.5lf %10.5lf ) (end  %10.5lf  %10.5lf ) (angle 90) (layer Edge.Cuts) (width 0.15))\n",bx,ay,bx,by);
+    //fprintf(fp,"  (gr_line (start %10.5lf %10.5lf ) (end  %10.5lf  %10.5lf ) (angle  0) (layer Edge.Cuts) (width 0.15))\n",ax,ay,bx,ay);
+    //fprintf(fp,"  (gr_line (start %10.5lf %10.5lf ) (end  %10.5lf  %10.5lf ) (angle  0) (layer Edge.Cuts) (width 0.15))\n",ax,by,bx,by);
+
+    fprintf(fp,"\n");
+    fprintf(fp,")\n");
+    fclose(fp);
+    return(0);
+}
