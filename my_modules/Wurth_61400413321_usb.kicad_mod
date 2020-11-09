@@ -1,7 +1,7 @@
 (module Wurth_61400413321 (layer F.Cu)
   (descr "Wurth_61400413321")
   (tags "usb")
-  (fp_text reference USB (at 0 -0.90 0) (layer F.Fab)
+  (fp_text reference USB (at 0 -0.90 0) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (fp_text value "" (at 0 1.0) (layer F.Fab)
