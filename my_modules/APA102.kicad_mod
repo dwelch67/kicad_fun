@@ -1,0 +1,22 @@
+(module APA102 (layer F.Cu) (tedit 5415CC62)
+    (fp_text reference U1 (at 0 3.556 180) (layer F.SilkS) hide
+        (effects (font (size 0.889 0.889) (thickness 0.22225)))
+    )
+    (fp_text value APA102 (at 0 0 270) (layer F.SilkS) hide
+        (effects (font (size 0.889 0.6) (thickness 0.15)))
+    )
+    (fp_line (start  2.5   2.5) (end -2.5   2.5) (layer F.CrtYd) (width 0.01))
+    (fp_line (start  2.5  -2.5) (end -2.5  -2.5) (layer F.CrtYd) (width 0.01))
+    (fp_line (start  2.5   2.5) (end  2.5  -2.5) (layer F.CrtYd) (width 0.01))
+    (fp_line (start -2.5   2.5) (end -2.5  -2.5) (layer F.CrtYd) (width 0.01))
+    (fp_line (start -1.5  -2.5) (end -2.5  -1.5) (layer F.CrtYd) (width 0.01))
+    (fp_line (start -2.65 -0.5) (end -2.65  0.5) (layer F.SilkS) (width 0.1))
+
+    (pad DI  smd rect (at  -2.6 -1.7) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask)        )
+    (pad CI  smd rect (at  -2.6 -0  ) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask)        )
+    (pad GND smd rect (at  -2.6  1.7) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask)        )
+
+    (pad VCC smd rect (at 2.6  1.7) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask)        )
+    (pad CO  smd rect (at 2.6 -0  ) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask)        )
+    (pad DO  smd rect (at 2.6 -1.7) (size 2.2 1.1) (layers F.Cu F.Paste F.Mask)        )
+)
